@@ -20,6 +20,10 @@ def fetch_text(font: pygame.font.Font, text: str, color=(255, 255, 255)) -> pyga
 
 def fetch_image(name: str, rot: float = 0) -> pygame.Surface:
     img_name = name
+    while rot > pi*2:
+        rot -= pi*2
+    while rot < 0:
+        rot += pi*2
     name = f"{name}|{rot}"
     if name not in image_storage:
         image_storage[name] = pygame.image.load(get_path("assets", img_name)).convert_alpha()

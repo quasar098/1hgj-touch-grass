@@ -56,7 +56,7 @@ class Player:
 
     def move(self):
         global screen_shake
-        self.drot *= 0.9 * 75/FRAMERATE
+        self.drot *= 0.9
         self.rot += self.drot
         keys = pygame.key.get_pressed()
         move = keys[pygame.K_w]-keys[pygame.K_s]
